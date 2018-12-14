@@ -28,8 +28,14 @@ window.onload = function () {
     }
 
     function restartGame() {
+        params.computerScore = 0;
+        params.playerScore = 0;
+        params.progress.computerMove = 0;
+        params.progress.playerMove = 0;
+        setText();
         params.roundsNumber = getNumber();
         params.outputNewGame.innerHTML = "";
+
     }
    function showModal() {
         document.querySelector("#modal").classList.add("show");
@@ -57,6 +63,7 @@ window.onload = function () {
             params.players.style.display = "";
             return number;
         }
+
     }
 
     function setText(txt) {
@@ -73,9 +80,7 @@ window.onload = function () {
             }
             params.newGame.style.display = "";
         }
-        if(params.playerScore == params.roundsNumber || params.computerScore == params.roundsNumber) {
-            showModal();
-        }
+
     }
 
     function makeComputerChoice() {
@@ -115,8 +120,10 @@ window.onload = function () {
                 playerMove: params.playerScore,
             }
         );
+        if(params.playerScore >= params.roundsNumber || params.computerScore >= params.roundsNumber) {
+            showModal();
+        }
     }
-
     params.newGame.addEventListener("click", restartGame);
 
     var hideModal = function(event) {
