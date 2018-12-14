@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zagrajmy! Kamień, Papier, Nożyce</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class=col-md-12>
+            <h1>Zagrajmy! Kamień, Papier, Nożyce</h1>
+
+        </div>
+    </div>
+    <div class="row" id="buttons" style="display:none">
+        <div class="col-md-4 mobile">
+            <button type="button" class="btn btn-primary player-move" id="rock" data-move="rock">Kamień</button>
+        </div>
+
+        <div class="col-md-4 mobile">
+            <button type="button" class="btn btn-success player-move" id="paper" data-move="paper">Papier</button>
+        </div>
+        <div class="col-md-4 mobile">
+            <button type="button" class="btn btn-warning player-move" id="scissors" data-move="scissors">Nożyce</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mobile">
+            <button type="button" class="btn btn-success" id="new-game">Zagramy?</button>
+
+        </div>
+    </div>
+    <div id="outputNewGame"></div>
+    <div id="output"></div>
+    <div id="outputInfo"></div>
+    <h2 id="players">[Gracz] <span id="playerScore">0</span> - <span id="computerScore">0</span> [Komputer]</h2>
+
+
+    <div class="overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <a href="#" class="close">x</a>
+            <header>Gra zakończona</header>
+            <div class="content" id="game-content">
+
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Ruch gracza</th>
+                    <th>Ruch komputera</th>
+                </tr>
+                </thead>
+                <tbody id="content-results">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
